@@ -5,4 +5,5 @@
     <dimen name="item_note_name">20sp</dimen>
     <dimen name="app_margin">16dp</dimen>
     <dimen name="item_note_text">16sp</dimen>
+    <dimen name="btn_width">250dp</dimen>
 </resources>
