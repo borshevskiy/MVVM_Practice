@@ -5,4 +5,5 @@
     <string name="Enter_note_text">Введите текст</string>
     <string name="start_label">Что будем использовать?</string>
     <string name="start_btn_room">ROOM</string>
+    <string name="title">Заметки</string>
 </resources>
