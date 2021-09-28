@@ -9,6 +9,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.borshevskiy.mvvp_practice.R
 import com.borshevskiy.mvvp_practice.databinding.FragmentStartBinding
+import com.borshevskiy.mvvp_practice.utils.ACTIVITY_APP
 import com.borshevskiy.mvvp_practice.utils.TYPE_DATABASE
 import com.borshevskiy.mvvp_practice.utils.TYPE_ROOM
 
@@ -30,7 +31,9 @@ class StartFragment : Fragment() {
         super.onStart()
         mViewModel = ViewModelProvider(this)[StartFragmentViewModel::class.java]
         binding.btnRoom.setOnClickListener {
-            mViewModel.initDatabase(TYPE_ROOM)
+            mViewModel.initDatabase(TYPE_ROOM) {
+                ACTIVITY_APP.mNavController.navigate(R.id.action_startFragment_to_mainFragment)
+            }
         }
     }
 

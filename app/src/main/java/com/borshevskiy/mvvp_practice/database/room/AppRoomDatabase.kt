@@ -1,0 +1,26 @@
+package com.borshevskiy.mvvp_practice.database.room
+
+import android.content.Context
+import androidx.room.Database
+import androidx.room.Room
+import androidx.room.RoomDatabase
+import com.borshevskiy.mvvp_practice.models.AppNote
+
+@Database(entities = [AppNote::class], version = 1)
+abstract class AppRoomDatabase: RoomDatabase() {
+
+    abstract fun getAppRoomDAO(): AppRoomDAO
+
+    companion object {
+        @Volatile
+        private var database: AppRoomDatabase? = null
+
+        @Synchronized
+        fun getInstance(context: Context): AppRoomDatabase {
+            return if (database == null) {
+                database = Room.databaseBuilder(context, AppRoomDatabase::class.java, "note.db").build()
+                database as AppRoomDatabase
+            } else database as AppRoomDatabase
+        }
+    }
+}
