@@ -16,7 +16,7 @@
     </fragment>
     <fragment
         android:id="@+id/mainFragment"
-        android:name="com.borshevskiy.mvvp_practice.screens.MainFragment"
+        android:name="com.borshevskiy.mvvp_practice.screens.main.MainFragment"
         android:label="fragment_main"
         tools:layout="@layout/fragment_main" >
         <action
