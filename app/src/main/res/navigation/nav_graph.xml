@@ -40,7 +40,7 @@
     </fragment>
     <fragment
         android:id="@+id/addNewNoteFragment"
-        android:name="com.borshevskiy.mvvp_practice.screens.AddNewNoteFragment"
+        android:name="com.borshevskiy.mvvp_practice.screens.addNewNote.AddNewNoteFragment"
         android:label="fragment_add_new_note"
         tools:layout="@layout/fragment_add_new_note" >
         <action

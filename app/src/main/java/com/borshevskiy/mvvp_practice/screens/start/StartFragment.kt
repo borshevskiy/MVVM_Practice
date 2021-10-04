@@ -1,16 +1,14 @@
 package com.borshevskiy.mvvp_practice.screens.start
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.lifecycle.Observer
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import com.borshevskiy.mvvp_practice.R
 import com.borshevskiy.mvvp_practice.databinding.FragmentStartBinding
-import com.borshevskiy.mvvp_practice.utils.ACTIVITY_APP
-import com.borshevskiy.mvvp_practice.utils.TYPE_DATABASE
 import com.borshevskiy.mvvp_practice.utils.TYPE_ROOM
 
 class StartFragment : Fragment() {
@@ -32,7 +30,7 @@ class StartFragment : Fragment() {
         mViewModel = ViewModelProvider(this)[StartFragmentViewModel::class.java]
         binding.btnRoom.setOnClickListener {
             mViewModel.initDatabase(TYPE_ROOM) {
-                ACTIVITY_APP.mNavController.navigate(R.id.action_startFragment_to_mainFragment)
+                findNavController().navigate(R.id.action_startFragment_to_mainFragment)
             }
         }
     }
